@@ -29,6 +29,19 @@ export default function AllChat(props) {
             </View>
 
                 <Tabs />
+<View style={{marginBottom:100}}></View>
+                     {/* >>>>>>>>>>>>>>>>>>>> Tab bar <<<<<<<<<<<<<<<<<< */}
+            <View style={styles._tapbar_main}>
+                <TouchableOpacity style={styles._bottom_icons}>
+                    <Ionicons name="person" size={24} color="#6B6B6B" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles._bottom_icons}>
+                    <Ionicons name="chatbubbles" size={24} color="#5382B0" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles._bottom_icons}>
+                    <Ionicons name="ios-settings-sharp" size={24} color="#6B6B6B" />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -60,6 +73,23 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         width: "20%",
         justifyContent:"space-between"
-    }
+    },
+    _tapbar_main: {
+        position: "absolute",
+        bottom: 0,
+        flexDirection: "row",
+        justifyContent: "space-around",
+        width: "100%",
+        alignSelf: "center",
+        alignItems: "center",
+        paddingBottom: 10,
+        paddingTop: 10,
+        borderTopColor: "gray",
+        borderTopWidth: 1,
+        backgroundColor:"white"
+    },
+    _bottom_icons: {
+        padding: 10,
+    },
 });
 
