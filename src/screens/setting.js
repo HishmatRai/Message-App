@@ -114,7 +114,8 @@ export default function Setting(props) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles._main}>
+                <TouchableOpacity style={styles._main}
+                onPress={() => props.navigation.navigate("History")}>
                     <View style={styles._icons_main}>
                         <TouchableOpacity style={styles._icons_box6}>
                         <MaterialIcons name="history" size={24} color="white" />
@@ -128,7 +129,8 @@ export default function Setting(props) {
                     </View>
                 </TouchableOpacity>
                 
-                <TouchableOpacity style={styles._main}>
+                <TouchableOpacity style={styles._main}
+                 onPress={() => props.navigation.navigate("Welcome")}>
                     <View style={styles._icons_main}>
                         <TouchableOpacity style={styles._icons_box7}>
                         <MaterialIcons name="lock" size={24} color="white" />
@@ -159,10 +161,12 @@ export default function Setting(props) {
             </ScrollView>
             {/* >>>>>>>>>>>>>>>>>>>> Tab bar <<<<<<<<<<<<<<<<<< */}
             <View style={styles._tapbar_main}>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                 onPress={() => props.navigation.navigate("Profile")}>
                     <Ionicons name="person" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                 onPress={() => props.navigation.navigate("AllChat")}>
                     <Ionicons name="chatbubbles" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles._bottom_icons}>

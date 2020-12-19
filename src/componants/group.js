@@ -45,7 +45,7 @@ export default function Group(props) {
                     <View style={styles._call_main}>
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
-                            <Text style={styles._profile_status}></Text>
+                            <Text style={styles._profile_status2}></Text>
                         </View>
                         <View style={styles._name_main}>
                             <View style={{ flexDirection: "row" }}>
@@ -77,6 +77,7 @@ export default function Group(props) {
                             <TouchableOpacity>
                                <Text>3m ago</Text>
                             </TouchableOpacity>
+                               <Text style={styles._typing}>Typing....</Text>
                         </View>
                     </View>
 
@@ -89,8 +90,11 @@ export default function Group(props) {
                             <View style={{ flexDirection: "row" }}>
                                 <Text style={styles._name}>Vilme</Text>
                                 <Text style={styles._status2}></Text>
+                                <TouchableOpacity style={styles._missed_icon}>
+                                <Ionicons name="ios-call" size={20} color="#5382B0" />
+                            </TouchableOpacity>
                             </View>
-                                <Text style={styles._dis}>Yesterday</Text>
+                                <Text style={styles._dis2}>You missed a video call</Text>
                         </View>
                         <View style={styles._call_icon_main}>
                             <TouchableOpacity>
@@ -154,7 +158,7 @@ const styles = StyleSheet.create({
         width: 72,
         height: 72,
         borderRadius: 100,
-        backgroundColor: "red",
+        backgroundColor: "#F2F2F2",
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "center",
@@ -206,7 +210,19 @@ const styles = StyleSheet.create({
         height: 15,
         borderRadius: 100,
         marginTop: -15,
-        marginLeft: 44
+        marginLeft: 44,
+        borderColor:"white",
+        borderWidth:2,
+    },
+    _profile_status2: {
+        backgroundColor: "#949494",
+        width: 15,
+        height: 15,
+        borderRadius: 100,
+        marginTop: -15,
+        marginLeft: 44,
+        borderColor:"white",
+        borderWidth:2,
     },
     _name: {
         fontWeight: "bold"
@@ -221,6 +237,24 @@ const styles = StyleSheet.create({
     },
     _dis:{
         marginTop:5
+    },
+    _dis2:{
+        marginTop:5,
+        color:"red"
+    },
+    _missed_icon:{
+        backgroundColor:"#CFDFEB",
+        width:30,
+        height:30,
+        borderRadius:100,
+        alignSelf:"center",
+        justifyContent:"center",
+        alignItems:"center",
+        marginLeft:40
+    },
+    _typing:{
+        color:"gray",
+        marginTop:10
     }
 });
 

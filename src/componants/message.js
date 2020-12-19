@@ -1,11 +1,21 @@
+
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, TextInput, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons'
-export default function Message1(props) {
-    return (
-        <View style={styles.container}>
+export default class Messaage extends React.Component {
+    constructor(props) {
+        super();
+        this.state = {
+            showRealApp: false,
+            isNavigation: false,
+        };
+    }
+  render(){
+
+    return(
+<View style={styles.container}>
             <StatusBar barStyle="white" hidden={false} backgroundColor="#5382B0" translucent={true} />
             {/* ---------------- > STORY SHOW <------------------- */}
             <ScrollView>
@@ -42,10 +52,12 @@ export default function Message1(props) {
                     </View>
                 </View>
                 <View style={{ margin: 20 }}>
-                    <View style={styles._call_main}>
+                    <TouchableOpacity style={styles._call_main}
+                    // onPress={() => this.props.path.navigation.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
-                            <Text style={styles._profile_status}></Text>
+                            <Text style={styles._profile_status2}></Text>
                         </View>
                         <View style={styles._name_main}>
                             <View style={{ flexDirection: "row" }}>
@@ -59,7 +71,7 @@ export default function Message1(props) {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={styles._call_main}>
                         <View style={styles._profile_main}>
@@ -77,6 +89,7 @@ export default function Message1(props) {
                             <TouchableOpacity>
                                <Text>3m ago</Text>
                             </TouchableOpacity>
+                               <Text style={styles._typing}>Typing....</Text>
                         </View>
                     </View>
 
@@ -89,8 +102,11 @@ export default function Message1(props) {
                             <View style={{ flexDirection: "row" }}>
                                 <Text style={styles._name}>Vilme</Text>
                                 <Text style={styles._status2}></Text>
+                                <TouchableOpacity style={styles._missed_icon}>
+                                <Ionicons name="ios-call" size={20} color="#5382B0" />
+                            </TouchableOpacity>
                             </View>
-                                <Text style={styles._dis}>Yesterday</Text>
+                                <Text style={styles._dis2}>You missed a video call</Text>
                         </View>
                         <View style={styles._call_icon_main}>
                             <TouchableOpacity>
@@ -139,8 +155,10 @@ export default function Message1(props) {
                 </View>
             </ScrollView>
         </View>
-    );
+    )
+  }
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -154,7 +172,7 @@ const styles = StyleSheet.create({
         width: 72,
         height: 72,
         borderRadius: 100,
-        backgroundColor: "red",
+        backgroundColor: "#F2F2F2",
         alignSelf: "center",
         alignItems: "center",
         justifyContent: "center",
@@ -206,7 +224,19 @@ const styles = StyleSheet.create({
         height: 15,
         borderRadius: 100,
         marginTop: -15,
-        marginLeft: 44
+        marginLeft: 44,
+        borderColor:"white",
+        borderWidth:2,
+    },
+    _profile_status2: {
+        backgroundColor: "#949494",
+        width: 15,
+        height: 15,
+        borderRadius: 100,
+        marginTop: -15,
+        marginLeft: 44,
+        borderColor:"white",
+        borderWidth:2,
     },
     _name: {
         fontWeight: "bold"
@@ -217,10 +247,28 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: "#5382B0",
         marginLeft: 5,
-        marginTop: 8
+        marginTop: 8,
+      
     },
     _dis:{
         marginTop:5
+    },
+    _dis2:{
+        marginTop:5,
+        color:"red"
+    },
+    _missed_icon:{
+        backgroundColor:"#CFDFEB",
+        width:30,
+        height:30,
+        borderRadius:100,
+        alignSelf:"center",
+        justifyContent:"center",
+        alignItems:"center",
+        marginLeft:40
+    },
+    _typing:{
+        color:"gray",
+        marginTop:10
     }
 });
-

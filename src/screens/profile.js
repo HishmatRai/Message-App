@@ -55,10 +55,12 @@ export default function Profile(props) {
                 <TouchableOpacity style={styles._bottom_icons}>
                     <Ionicons name="person" size={24} color="#5382B0" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                onPress={() => props.navigation.navigate("AllChat")}>
                     <Ionicons name="chatbubbles" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                onPress={() => props.navigation.navigate("Setting")}>
                     <Ionicons name="ios-settings-sharp" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
             </View>

@@ -1,18 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, TextInput, TextPropTypes } from 'react-native';
-// import Otp2 from './../componants/otp'
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, ScrollView, ImageBackground } from 'react-native';
+import Otp2 from './../componants/otp'
+const image = { uri: './../../assets/bc_image.png' };
 export default function Otp(props) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="white" hidden={false} backgroundColor="#5382B0" translucent={true} />
-      <Text style={styles._heading}>Welcome</Text>
-      <Image source={require('./../../assets/logo.png')} style={styles._logo} />
-
-      {/* <Otp2 /> */}
-      <TouchableOpacity style={styles._opt_btn} 
-       onPress={() => props.navigation.navigate("Moreinterest")}>
-        <Text style={styles._opt_btn_Text}>Get OTP</Text>
-      </TouchableOpacity>
+<ScrollView>
+      <ImageBackground source={require("./../../assets/bc_image.png")} style={styles.image}>
+        <Image source={require('./../../assets/logo.png')} style={styles._logo} />
+      </ImageBackground>
+      <Text style={styles._enter_otp}>
+        Enter OTP
+      </Text>
+      <View style={styles._otp_put_main}>
+      <Otp2 />
+      </View>
+      <Text style={styles._code_not_rec}>Did not receive the code?</Text>
+      <View style={styles._btn_main}>
+        <TouchableOpacity style={styles._btn}
+         onPress={() => props.navigation.navigate("AllChat")}>
+          <Text style={styles._btn_txt}>Re-send</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles._btn}
+         onPress={() => props.navigation.navigate("AllChat")}>
+          <Text style={styles._btn_txt}>Get a call now</Text>
+        </TouchableOpacity>
+      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -20,37 +35,58 @@ export default function Otp(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5382B0',
+    backgroundColor: '#F4FCFF',
     // alignItems: 'center',
     // justifyContent: 'center',
   },
-  _heading: {
-    color: "white",
-    textAlign: "center",
-    fontSize: 30,
-    marginTop: 100,
-    fontWeight: "bold"
+  image: {
+    // flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    width: "100%",
+    height: 325
   },
   _logo: {
     height: 150,
     width: 150,
-    alignSelf: "center",
     marginTop: 50,
-    marginBottom: 40
+    marginBottom: 40,
+    justifyContent: "flex-start",
+    marginLeft: 40
   },
-  _opt_btn: {
-    width: "40%",
+  _enter_otp: {
+    fontWeight: "bold",
+    color: "#5382B0",
+    justifyContent: "center",
+    textAlign: "center",
+    marginTop: 20,
+    fontSize: 20
+  },
+  _otp_put_main: {
+    backgroundColor: "#7DA7CA",
+    borderRadius: 5,
+    width: "80%",
     alignItems: "center",
-    backgroundColor: "white",
     alignSelf: "center",
-    marginTop: 40,
-    borderRadius: 5
+    marginTop: 30
 
   },
-  _opt_btn_Text: {
-    color: "#5382B0",
-    fontSize: 20,
-    padding: 17
+  _code_not_rec: {
+    textAlign: "center",
+    marginTop: 10,
+    fontSize: 20
+  },
+  _btn_main:{
+    flexDirection:"row",
+    justifyContent:"space-around",
+    marginTop:10
+  },
+  _btn:{
+    // backgroundColor:"red"
+  },
+  _btn_txt:{
+    color:"#5382B0",
+    padding:10
   }
 
 });

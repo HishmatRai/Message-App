@@ -15,30 +15,35 @@ export default function AllChat(props) {
             <View style={styles._header_main_view}>
                 <View style={styles._heading_icons_main}>
                     <View>
-                    <Text style={styles._heading_text}>All Chat</Text>
+                        <Text style={styles._heading_text}>All Chat</Text>
                     </View>
                     <View style={styles._search_main}>
-                        <TouchableOpacity>
-                          <Ionicons name="ios-person-add-sharp" size={24} color="white" />
+                        <TouchableOpacity
+                            onPress={() => props.navigation.navigate("Profile")}>
+                            <Ionicons name="ios-person-add-sharp" size={24} color="white" />
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                        <Ionicons name="search" size={24} color="white" />
+                        <TouchableOpacity
+                            onPress={() => props.navigation.navigate("Search")}>
+                            <Ionicons name="search" size={24} color="white" />
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
 
-                <Tabs />
-<View style={{marginBottom:100}}></View>
-                     {/* >>>>>>>>>>>>>>>>>>>> Tab bar <<<<<<<<<<<<<<<<<< */}
+            <Tabs path={props} />
+            <View style={{ marginBottom: 100 }}></View>
+            {/* >>>>>>>>>>>>>>>>>>>> Tab bar <<<<<<<<<<<<<<<<<< */}
             <View style={styles._tapbar_main}>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                    onPress={() => props.navigation.navigate("Profile")}>
                     <Ionicons name="person" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                >
                     <Ionicons name="chatbubbles" size={24} color="#5382B0" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles._bottom_icons}>
+                <TouchableOpacity style={styles._bottom_icons}
+                    onPress={() => props.navigation.navigate("Setting")}>
                     <Ionicons name="ios-settings-sharp" size={24} color="#6B6B6B" />
                 </TouchableOpacity>
             </View>
@@ -69,10 +74,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 20
     },
-    _search_main:{
-        flexDirection:"row",
+    _search_main: {
+        flexDirection: "row",
         width: "20%",
-        justifyContent:"space-between"
+        justifyContent: "space-between"
     },
     _tapbar_main: {
         position: "absolute",
@@ -86,7 +91,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         borderTopColor: "gray",
         borderTopWidth: 1,
-        backgroundColor:"white"
+        backgroundColor: "white"
     },
     _bottom_icons: {
         padding: 10,

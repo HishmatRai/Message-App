@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, TextInput,ScrollView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 export default function Welcome(props) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="white" hidden={false} backgroundColor="#5382B0" translucent={true} />
+      <ScrollView>
       <Text style={styles._heading}>Welcome</Text>
       <Image source={require('./../../assets/logo.png')} style={styles._logo} />
       <View style={styles._number_input}>
@@ -20,6 +21,7 @@ export default function Welcome(props) {
        onPress={() => props.navigation.navigate("Otp")}>
         <Text style={styles._opt_btn_Text}>Get OTP</Text>
       </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 }
