@@ -9,7 +9,8 @@ export default function Request(props) {
             <StatusBar barStyle="white" hidden={false} backgroundColor="#17C261" translucent={true} />
             <ScrollView>
                 <View style={{ margin: 20 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={() => props.navigation.goBack()}>
                         <Entypo name="cross" size={24} color="white" style={styles._cross_icon} />
                     </TouchableOpacity>
                     <View style={styles._together_image}>
@@ -32,7 +33,8 @@ export default function Request(props) {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-            <TouchableOpacity style={styles._swipe_btn_main}>
+            <TouchableOpacity style={styles._swipe_btn_main}
+              onPress={() => props.navigation.navigate("Message")}>
                 <Text style={styles._blank}></Text>
                 <Text style={styles._swipe_btn_txt}>Request</Text>
             </TouchableOpacity>

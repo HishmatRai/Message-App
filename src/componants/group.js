@@ -3,8 +3,17 @@ import { StyleSheet, Text, View, TouchableOpacity, StatusBar, Image, TextInput, 
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons'
-export default function Group(props) {
-    return (
+export default class Group extends React.Component {
+    constructor(props) {
+        super();
+        this.state = {
+            showRealApp: false,
+            isNavigation: false,
+        };
+    }
+  render(){
+
+    return(
         <View style={styles.container}>
             <StatusBar barStyle="white" hidden={false} backgroundColor="#5382B0" translucent={true} />
             {/* ---------------- > STORY SHOW <------------------- */}
@@ -42,7 +51,9 @@ export default function Group(props) {
                     </View>
                 </View>
                 <View style={{ margin: 20 }}>
-                    <View style={styles._call_main}>
+                <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status2}></Text>
@@ -59,9 +70,11 @@ export default function Group(props) {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                 </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                 <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -79,9 +92,11 @@ export default function Group(props) {
                             </TouchableOpacity>
                                <Text style={styles._typing}>Typing....</Text>
                         </View>
-                    </View>
+                  </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                  <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -101,9 +116,11 @@ export default function Group(props) {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+               </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+               <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -120,9 +137,11 @@ export default function Group(props) {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                 </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                 <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -139,12 +158,14 @@ export default function Group(props) {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+            </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>
-    );
+    )
 }
+}
+
 
 const styles = StyleSheet.create({
     container: {

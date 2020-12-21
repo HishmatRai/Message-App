@@ -53,7 +53,7 @@ export default class Messaage extends React.Component {
                 </View>
                 <View style={{ margin: 20 }}>
                     <TouchableOpacity style={styles._call_main}
-                    // onPress={() => this.props.path.navigation.navigate("SwipeToPlay")}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
                     >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
@@ -73,7 +73,9 @@ export default class Messaage extends React.Component {
                         </View>
                     </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                    <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -91,9 +93,11 @@ export default class Messaage extends React.Component {
                             </TouchableOpacity>
                                <Text style={styles._typing}>Typing....</Text>
                         </View>
-                    </View>
+                  </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                  <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -113,9 +117,11 @@ export default class Messaage extends React.Component {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                  </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+                  <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -132,9 +138,11 @@ export default class Messaage extends React.Component {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+              </TouchableOpacity>
 
-                    <View style={styles._call_main}>
+              <TouchableOpacity style={styles._call_main}
+                    onPress={() => this.props.path.navigate("SwipeToPlay")}
+                    >
                         <View style={styles._profile_main}>
                             <Image source={require('./../../assets/call.png')} style={styles._user_profile} />
                             <Text style={styles._profile_status}></Text>
@@ -151,7 +159,7 @@ export default class Messaage extends React.Component {
                                <Text>3m ago</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
+                  </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>

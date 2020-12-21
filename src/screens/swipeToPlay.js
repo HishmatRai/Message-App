@@ -9,7 +9,8 @@ export default function SwipeToPlay(props) {
             <StatusBar barStyle="white" hidden={false} backgroundColor="#5382B0" translucent={true} />
             <ScrollView>
                 <View style={{ margin: 20 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                     onPress={() => props.navigation.goBack()}>
                         <Entypo name="cross" size={24} color="white" style={styles._cross_icon} />
                     </TouchableOpacity>
                     <View style={styles._together_image}>
@@ -32,7 +33,9 @@ export default function SwipeToPlay(props) {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-            <TouchableOpacity style={styles._swipe_btn_main}>
+            <TouchableOpacity style={styles._swipe_btn_main}
+                     onPress={() => props.navigation.navigate("Request")}>
+                     
                 <Text style={styles._blank}></Text>
                 <Text style={styles._swipe_btn_txt}>Swipe To Play</Text>
             </TouchableOpacity>

@@ -19,7 +19,7 @@ function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
         <Stack.Screen name="Otp" component={Otp} options={{ headerShown: false }} />
         <Stack.Screen name="Message" component={Message} options={{ headerShown: false }} />
         <Stack.Screen name="AllChat" component={AllChat} options={{ headerShown: false }} />
@@ -29,8 +29,8 @@ function Navigation() {
         <Stack.Screen name="Request" component={Request} options={{ headerShown: false }} />
         <Stack.Screen name="Setting" component={Setting} options={{ headerShown: false }} />
         <Stack.Screen name="Back" component={Back} options={{ headerShown: false }} />
-        <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
-        {/* <Stack.Screen name="Scaner" component={Scaner} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} /> */}
+        <Stack.Screen name="Scaner" component={Scaner} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

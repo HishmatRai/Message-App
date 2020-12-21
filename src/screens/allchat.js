@@ -30,7 +30,7 @@ export default function AllChat(props) {
                 </View>
             </View>
 
-            <Tabs path={props} />
+            <Tabs path={props.navigation} />
             <View style={{ marginBottom: 100 }}></View>
             {/* >>>>>>>>>>>>>>>>>>>> Tab bar <<<<<<<<<<<<<<<<<< */}
             <View style={styles._tapbar_main}>
